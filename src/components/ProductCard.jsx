@@ -1,19 +1,18 @@
-import React from 'react';
-import styles from '../styles/ProductCard.module.css';
+import React from "react";
+import styles from "../styles/ProductCard.module.css";
+import Button from "@mui/material/Button";
 
-const ProductCard = ({ product }) => {
+function ProductCard({ product }) {
   return (
-    <div className>
-      {/* TODO: Apply conditional class to <div> above for out-of-stock items */}
-      
-      {/* TODO: Display product name */}
-
-      {/* TODO: Display product price */}
-
-      {/* TODO: Show if the product is in stock or out of stock */}
-      
+    <div className={product.inStock ? styles.card : styles.outOfStock}>
+      <h3>{product.name}</h3>
+      <p>Price: ${product.price}</p>
+      <p>Status: {product.inStock ? "In Stock" : "Out of Stock"}</p>
+      <Button variant="contained" disabled={!product.inStock}>
+        Buy Now
+      </Button>
     </div>
   );
-};
+}
 
 export default ProductCard;
