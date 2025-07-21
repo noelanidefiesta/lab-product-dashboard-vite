@@ -37,3 +37,5 @@ npm test
 - Conditional styling for out-of-stock items
 - Material UI integration
 - CSS Modules for scoped styles
+
+Last try
